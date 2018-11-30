@@ -38,7 +38,9 @@ namespace SRBot.CNext
                         string run = r.ToString().Substring(0, index);
                         var timespan = TimeSpan.Parse(r.ToString().Substring(index + 4));
 
-                        runString += $"[**{run}** in ";
+                        runString += $"[**{run}** ";
+                        
+                        runString += " in ";
                         if (timespan.Days > 0) runString += $"{timespan.Days}d {timespan.Hours}h {timespan.Minutes}m {timespan.Seconds}s\n";
                         else if (timespan.Hours > 0) runString += $"{timespan.Hours}h {timespan.Minutes}m {timespan.Seconds}s\n";
                         else if (timespan.Minutes > 0) runString += $"{timespan.Minutes}m {timespan.Seconds}s\n";
